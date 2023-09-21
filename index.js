@@ -147,11 +147,10 @@ wss.on('connection', (connection, req) => {
 
     connection.isAlive = true;
 
-    connection.timer = setInterval(() => {
+    setInterval(() => {
         connection.ping();
         connection.disConnectTimer = setTimeout(() => {
             connection.isAlive = false;
-            clearInterval(connection.timer)
             connection.terminate();
             notifyAboutOnlinePeople();
         }, 1000)
