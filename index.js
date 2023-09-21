@@ -154,8 +154,8 @@ wss.on('connection', (connection, req) => {
             clearInterval(connection.timer)
             connection.terminate();
             notifyAboutOnlinePeople();
-        }, 10)
-    }, 1500)
+        }, 1000)
+    }, 5000)
 
 
     //read the username and userid for this connection
